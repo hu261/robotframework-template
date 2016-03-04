@@ -1,0 +1,10 @@
+*** Settings ***
+Documentation     Global variables
+
+*** Variables ***
+${SERIAL_PARITY}    None
+${SERIAL_BAUDS}    115200
+${DEFAULT_CONF}    654321
+${DEFAULT_HOSTNAME}    localhost
+${LOGIN}          peioroth
+${TARGET}         ${EMPTY}

@@ -1,0 +1,22 @@
+*** Settings ***
+Documentation     Remote control keywords
+Resource          globals.txt
+Library           SSHLibrary
+Library           String
+
+*** Keywords ***
+Remote_Open
+    [Arguments]    ${hostname}=${DEFAULT_HOSTNAME}
+    [Documentation]    Open SSH connection to ${hostname}
+    SSHLibrary.Open Connection    ${hostname}
+    SSHLibrary.Login    ${LOGIN}    dontcare
+
+Remote_List_Files
+    [Arguments]    ${remote_dir}
+    [Documentation]    List files on the remote host
+    ${output}    SSHLibrary.Execute Command    ls ${remote_dir}
+    ${files}    Split String    ${output}
+    [Return]    ${files}
+
+Remote Close
+    SSHLibrary.Close All Connections

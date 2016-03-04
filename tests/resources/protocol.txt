@@ -1,0 +1,18 @@
+*** Settings ***
+Documentation     Protocol management keywords
+Resource          globals.txt
+Library           ../libs/libserial.py
+
+*** Keywords ***
+Protocol_Send_Config
+    [Arguments]    ${CONFIG_DATA}
+    [Documentation]    Send config frame
+    ${result}    Serial_Send    ${CONFIG_DATA}
+    Should Not Contain    ${result}    Error
+
+Protocol_Check_Config
+    [Arguments]    ${config}
+    [Documentation]    Send default configuration and check that it has been correctly written into the device
+    Protocol_Send_Config    ${config}
+    ${result} =    Serial Receive
+    Should Be Equal    ${result}    123456

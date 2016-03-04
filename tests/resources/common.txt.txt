@@ -1,0 +1,22 @@
+*** Settings ***
+Documentation     Common keywords for testing
+Resource          protocol.txt
+
+*** Keywords ***
+Start Test
+    [Documentation]    Start Test Case
+    No operation
+
+Stop Test
+    [Documentation]    Stop test case
+    No operation
+
+Start Suite
+    [Documentation]    Start Test Suite:
+    ...    - Configure serial line
+    ...    - etc...
+    Serial Configure    ${SERIAL_BAUDS}    ${SERIAL_PARITY}
+
+Stop Suite
+    [Documentation]    Stop Test Suite
+    Protocol_Send_Config    ${DEFAULT_CONF}

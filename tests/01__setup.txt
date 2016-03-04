@@ -1,0 +1,14 @@
+*** Settings ***
+Documentation     Setup acceptance test environment
+Force Tags        SETUP
+Library           OperatingSystem
+
+*** Variables ***
+
+*** Test Cases ***
+Update firmware
+    [Documentation]    Update device with latest firmware
+    Log    Upgrading device...
+    No operation
+
+*** Keywords ***

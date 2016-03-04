@@ -1,0 +1,39 @@
+*** Settings ***
+Documentation     Check that configuration is correctly written into the device
+Suite Setup       Start Suite
+Suite Teardown    Stop Suite
+Test Setup        Start Test
+Test Teardown     Stop Test
+Force Tags        SPRINT01    US001    CONFIG
+Library           libs/libserial.py
+Resource          resources/globals.txt
+Resource          resources/protocol.txt
+Resource          resources/common.txt.txt
+Library           OperatingSystem
+Library           Dialogs
+Library           Collections
+
+*** Variables ***
+${BP_NAME}        Re-initialisation
+${LED_NAME}       Power
+
+*** Test Cases ***
+Check configuration
+    [Documentation]    Checks that configuration is correctly written into the device
+    # Send config and check it has been written
+    Protocol_Check_Config    123456
+
+Check configuration on device
+    [Documentation]    Checks that configuration is correctly written into the device and leds are blinking
+    [Tags]    MANUAL
+    # Send config and check it has been written
+    Protocol_Check_Config    123456
+    Pause Execution    Appuyez sur le bouton poussoir ${BP_NAME}
+    Log    Work in progress...
+    :FOR    ${loop}    IN RANGE    3
+    \    Log    Work in progress, loop: ${loop}
+    \    Sleep    1s
+    Log    Work done !    WARN
+    Execute Manual Step    La led ${LED_NAME} a clignotté
+
+*** Keywords ***

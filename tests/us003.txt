@@ -1,0 +1,32 @@
+*** Settings ***
+Documentation     Example with SSHLibrary
+Suite Setup       Start Suite
+Suite Teardown    Stop Suite
+Test Setup        Start Test
+Test Teardown     Stop Test
+Force Tags        US003    SPRINT02    REMOTE
+Library           libs/libserial.py
+Resource          resources/globals.txt
+Resource          resources/common.txt.txt
+Library           OperatingSystem
+Library           Dialogs
+Library           Collections
+Resource          resources/remote.txt
+
+*** Variables ***
+${BP_NAME}        Re-initialisation
+${LED_NAME}       Power
+
+*** Test Cases ***
+Check remote
+    [Documentation]    Check remote access to the device
+    ${files}    Remote_List_Files    Bureau
+    List Should Contain Value    ${files}    pro
+    List Should Not Contain Value    ${files}    toto
+
+*** Keywords ***
+Start Test
+    Remote_Open    ${TARGET}
+
+Stop Test
+    Remote Close

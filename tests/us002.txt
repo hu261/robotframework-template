@@ -1,0 +1,20 @@
+*** Settings ***
+Documentation     Test suite for User Story 002
+Suite Setup       Start Suite
+Suite Teardown    Stop Suite
+Test Setup        Start Test
+Test Teardown     Stop Test
+Force Tags        SPRINT01    US002
+Library           libs/libserial.py
+Resource          resources/globals.txt
+Resource          resources/protocol.txt
+Resource          resources/common.txt.txt
+
+*** Variables ***
+
+*** Test Cases ***
+Another test
+    [Documentation]    Checks that configuration is correctly written into the device
+    Pass Execution    Forced test to pass
+
+*** Keywords ***
