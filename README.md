@@ -15,7 +15,7 @@ Directory tree and scripts skeleton to quickly setup an acceptance testing suite
 
 ### Tests scripts naming
 
-This skeleton test suite makes you start quickly with robotframework testing. The naming convention used is: the name of the test file is US<Number> where <Number> is the number of your User Story.
+This skeleton test suite makes you start quickly with robotframework testing. The naming convention used is: the name of the test file is `US<Number>` where `<Number>` is the number of your User Story.
 
 ### Scrit running
 
@@ -25,11 +25,11 @@ To run the full test suite:
 
     make acceptance-test
     
-To run the test scripts that have the *MY_TAG*
+To run the test scripts that have the `MY_TAG`
 
     make TAGS=MY_TAG acceptance-test
     
-To run the test scripts that have *MY_TAG* _and_ *MY_OTHER_TAG*:
+To run the test scripts that have `MY_TAG` _and_ `MY_OTHER_TAG`:
 
     make TAGS=MY_TAGANDMY_OTHER_TAG acceptance-test
     
@@ -41,7 +41,7 @@ To run the test scripts on a specific target:
 
 Some examples are provided:
 
-* A 01_Setup.... test which, by its name is executed first. Note for embedded deves: you can use it to deploy the new firmware on your system ;)
+* A `01_Setup....` test which, by its name is executed first. Note for embedded deves: you can use it to deploy the new firmware on your system ;)
 * Some other scripts that:
  * use an example of external home-made python library
  * use the Dialog (built-in) library to interact with the tester for manual testing
