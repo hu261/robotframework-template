@@ -44,5 +44,5 @@ Some examples are provided:
 * A `01_Setup....` test which, by its name is executed first. Note for embedded deves: you can use it to deploy the new firmware on your system ;)
 * Some other scripts that:
  * use an example of external home-made python library
- * use the Dialog (built-in) library to interact with the tester for manual testing
- * use the SSHLibrary, an external robotframework library to connect to remote hosts
+ * use the [Dialog](http://robotframework.org/robotframework/latest/libraries/Dialogs.html) (built-in) library to interact with the tester for manual testing
+ * use the [SSHLibrary](https://github.com/robotframework/SSHLibrary), an external robotframework library to connect to remote hosts
