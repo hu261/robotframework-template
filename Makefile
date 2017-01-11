@@ -1,4 +1,4 @@
-#          Makefile for AE&T projects
+#          Makefile for my projects
 #
 # ----------------------------------------------------------------------------
 
@@ -24,7 +24,7 @@ define HELP
 endef
 export HELP
 
-PRODUCT_NAME = AET product name
+PRODUCT_NAME = My product name
 GIT_HASH = $(shell git log -1 --format=%h)
 GIT_STATUS = $(shell git status -uno --porcelain 2> /dev/null)
 ifeq ($(strip $(GIT_STATUS)),)
