@@ -17,19 +17,19 @@ Directory tree and scripts skeleton to quickly setup an acceptance testing suite
 
 This skeleton test suite makes you start quickly with robotframework testing. The naming convention used is: the name of the test file is `US<Number>` where `<Number>` is the number of your User Story.
 
-### Scrit running
+### Running tests
 
-A make file is provided to add some abstraction on top of the *pybot* command line utility.
+A makefile is provided to add some abstraction on top of the *pybot* command line utility.
 
 To run the full test suite:
 
     make acceptance-test
     
-To run the test scripts that have the `MY_TAG`
+To run the test scripts that have the tag `MY_TAG`
 
     make TAGS=MY_TAG acceptance-test
     
-To run the test scripts that have `MY_TAG` _and_ `MY_OTHER_TAG`:
+To run the test scripts that have the tags `MY_TAG` _and_ `MY_OTHER_TAG`:
 
     make TAGS=MY_TAGANDMY_OTHER_TAG acceptance-test
     
@@ -41,7 +41,7 @@ To run the test scripts on a specific target:
 
 Some examples are provided:
 
-* A `01_Setup....` test which, by its name is executed first. Note for embedded deves: you can use it to deploy the new firmware on your system ;)
+* A `01_Setup....` test which, by its name is executed first. Note for embedded developers: you can use it to deploy the new firmware on your system before running your test campain
 * Some other scripts that:
  * use an example of external home-made python library
  * use the [Dialog](http://robotframework.org/robotframework/latest/libraries/Dialogs.html) (built-in) library to interact with the tester for manual testing
