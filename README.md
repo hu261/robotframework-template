@@ -15,7 +15,7 @@ Directory tree and scripts skeleton to quickly setup an acceptance testing suite
 
 ### Tests scripts naming
 
-This skeleton test suite makes you start quickly with robotframework testing. The naming convention used is: the name of the test file is `US<Number>` where `<Number>` is the number of your User Story.
+This skeleton test suite makes you start quickly with robotframework testing. The naming convention used is: the name of the test file is `us<Number>.txt` where `<Number>` is the number of your User Story.
 
 ### Running tests
 
