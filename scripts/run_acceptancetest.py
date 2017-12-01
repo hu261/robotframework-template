@@ -47,7 +47,6 @@ def run_tests(args):
     extra_args += ['--suitestatlevel', '1']   # limit stat size
     extra_args += ['--splitlog']              # split logs to limit per-file size
 
-    # rework pybot args
     args = rework_args(args=args)
 
     args = extra_args + args
